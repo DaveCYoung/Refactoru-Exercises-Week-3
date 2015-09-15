@@ -1,0 +1,44 @@
+	<!DOCTYPE html>
+	<html ng-app="exModule">
+	<head>
+		<title>
+			Gold Rush App!
+		</title>
+		<link rel="stylesheet" type="text/css" href="goldrush.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
+		<script src="goldrush.js" type="text/javascript"></script>
+	</head>
+
+	<body ng-controller="mainController">
+		<div class = "mapcontainer" ng-click = "imageclick($event)">
+			<img class = "image" src = "topo-co.jpg">
+
+			<img  style = "left: {{x}}px; top:{{y}}px;" ng-show = "clicked" class = "pointer" src = "http://www.clker.com/cliparts/E/G/i/g/M/8/mouse-pointer-hi.png" ng-click = "pointerClick">
+
+			<div class="textBox" ng-show = "textboxVisible" style = "left: {{textX}}px; top:{{y}}px;">
+
+			<textarea ng-model = "textcontent" class = "textarea" ng-show = "textarea"></textarea>
+			
+			<div ng-bind = "textcontent" class = "textarea" ng-show = "textentryvisible"> </div>
+
+				<button ng-click = "submit()" ng-show = "submitshow"> Submit </button>
+				<button ng-click = "cancel()"> Cancel </button>			
+
+			</div>
+
+
+		</div>
+		<div >
+			
+		</div>
+		
+
+
+
+
+
+
+
+
+	</body>
+	</html>

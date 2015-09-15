@@ -1,0 +1,78 @@
+Welcome to the thunder dome.  
+
+Javascript Functions!  
+
+Looking for more depth in functions, mastery over javascript functions.  
+
+
+Truthyness...  
+Zero is falsey
+'' is falsey
+null and undefined are falsey
+there or no falsey arrays or objects.  
+
+angular.module function === 'overloaded function'or 'polymorphism' - can preform different functions depending on inputs
+
+
+
+using callbacks 
+
+a function that you define but don't call.  it goes to another function that calls it as needed.
+
+cautionary: angular doesn't play well with setTimeout or setInterval.  if you change scope variables in a timeout, angular might not notice the change.  use angulars $timeout and $interval instead. 
+
+
+objects dont' get sorted.  arrays can be sorted.  
+
+CLOSURE...  look it up.  
+
+javascript - functions are first class citizens ie. they can go anywhere other values can go.  anywhere a value can go, a function can go.
+
+---------- Tuesday Notes -------------------
+
+
+functional programming - style of programming that is heavily reliant on functions.
+
+javascript well suited for functional programming.  
+
+break a large problem into smaller problems  
+
+writing composable functions - programming buzz word meaning they can be used in concert with other functions 
+
+when possible using pure functions - ie no side effects
+
+for functional programming your data should be immutable - cannot be changed.  want to treat data as stateless.
+
+for loops are statements. 
+ 
+
+.forEach () - built into javascript, every array has this method 
+
+myArray.forEach (function(element))
+
+MAP takes an input array and returns a new array of the same length, with each element transformed in some way. 
+
+angular - filter feature.  look into it.  filters array and returns new array.
+
+MAP, FILTER, REDUCE 
+
+Reduce.  takes input and reduces to single value.  takes an array input, reduces it to single value.
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
