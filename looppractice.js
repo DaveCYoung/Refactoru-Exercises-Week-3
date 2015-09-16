@@ -123,16 +123,18 @@
 // swapCase("Hello")
 
 
- firstReverse = function(input){
- 	var array = input.split('')
- 	var newarray = []
- 		for(i=array.length; i>=0; i--){
- 			newarray.push(array[i])
- 		}
- 	var newword = newarray.join('')
- 	console.log(newword)
- }
- firstReverse("What's up")
+ // firstReverse = function(input){
+ // 	var array = input.split('')
+ // 	var newarray = []
+ // 		for(i=array.length; i>=0; i--){
+ // 			newarray.push(array[i])
+ // 		}
+ // 	var newword = newarray.join('')
+ // 	console.log(newword)
+ // }
+ // firstReverse("What's up")
+
+ 
 
 
 

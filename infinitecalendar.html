@@ -1,0 +1,33 @@
+	<!DOCTYPE html>
+	<html ng-app="exModule">
+	<head>
+		<title>
+			Infinite Calendar!
+		</title>
+		<link rel="stylesheet" type="text/css" href="infinitecalendar.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
+		<script src="infinitecalendar.js" type="text/javascript"></script>
+	</head>
+
+	<body ng-controller="mainController">
+		<div class = "header">
+				<h1 class = "title">Calendar</h1>
+		</div>
+
+
+
+		<div class = "calendarcontainer">
+			<div class = "calendarday" ng-repeat = "day in dateArray">	
+				<h1>{{dateArray[$index].date}}</h1>
+				<p class = "div" ng-bind= "dateArray[$index].content" ng-click = "paragraphclick($index)" ng-show = "!setactiveindex($index)"> <!-- {{dateArray[$index].content}} --></p>
+				<textarea  class = "div" ng-model= "dateArray[$index].content"  ng-show = "setactiveindex($index)" type="text" placeholder="{{dateArray[$index].content}}"></textarea>
+				<button ng-click = "buttonclick($index)" ng-show = "setactiveindex($index)">Submit</button>
+			</div>	
+		
+		<div class = "footer" ng-mouseover = "dayAdd()">
+				See More
+		</div>
+
+	</div>
+	</body>
+	</html>
