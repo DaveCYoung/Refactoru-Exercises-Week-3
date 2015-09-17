@@ -1,0 +1,75 @@
+	<!DOCTYPE html>
+	<html ng-app="exModule">
+	<head>
+		<title>
+			Starcraft
+		</title>
+		<link rel="stylesheet" type="text/css" href="starcraft.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
+		
+	</head>
+
+	<body>
+	<body ng-controller="mainController">
+		<div class = "header">
+				<h1 class = "title">Starcraft Rankings</h1>
+			<div class = "sortby">
+			<div class = "menucontainer">
+				<div class = "menuitem container">	
+				{{cols[0]}}
+				</div>	
+				<div class = "menuitem container">	
+				{{cols[1]}}
+				</div>	
+				<div class = "menuitem container">
+				{{cols[2]}}
+				</div>
+				<div class = "menuitem container">
+				{{cols[3]}}
+				</div>
+				<div class = "menuitem container">
+				{{cols[4]}}
+				</div>
+			</div>
+			</div>
+		</div>
+
+	<div class = "rankingoutercontainer">
+	<div class = "rankingcontainer" ng-repeat = "x in displaydata track by $index">
+			<div class = "rankitem container">	
+			{{displaydata[$index][0]}}
+			</div>	
+			<div class = "rankitem container">	
+			{{displaydata[$index][1]}}
+			</div>	
+			<div class = "rankitem container">
+			{{displaydata[$index][2]}}
+			</div>
+			<div class = "rankitem container">
+			{{displaydata[$index][3]}}
+			</div>
+			<div class = "rankitem container">
+			{{displaydata[$index][4]}}
+			</div>
+	</div>
+	</div>
+	<div class = "pagination">
+		<button class = "paginationitem" ng-click = "oneclick()"> First </button>
+		<button class = "paginationitem" ng-click = "prevclick()"> Prev </button>
+		<button class = "paginationitem" ng-click = "oneclick()"> 1</button>
+		<button class = "paginationitem" ng-click = "twoclick()"> 2</button>
+		<button class = "paginationitem" ng-click = "threeclick()"> 3 </button>
+		<button class = "paginationitem" ng-click = "fourclick()"> 4 </button>
+		<button class = "paginationitem" ng-click = "fiveclick()"> 5 </button>
+		<button class = "paginationitem" ng-click = "nextclick()"> Next </button>
+		<button class = "paginationitem" ng-click = "lastclick()"> Last </button>
+	</div>
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+	<script src="starcraft.js" type="text/javascript"></script>
+	</body>
+	</html>

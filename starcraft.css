@@ -1,0 +1,47 @@
+.container{
+	display: inline-block;
+	padding: 40px;
+	width: 120px;
+	border: 2px solid black;
+	margin: 5px;
+
+}
+.menuitem{
+	background-color:black;
+	color:white;
+	font-weight:bold;
+	border-radius: 5px
+}
+.rankitem{
+	background-color: white;
+	border-radius: 5px;
+}
+
+.rankingcontainer{
+	background-color: white;
+	text-align: center;
+
+}
+
+.menucontainer{
+	text-align: center;
+}
+.header{
+	position: fixed;
+	text-align: center;
+	background-color: white;
+	top:0px;
+	left: 0px;
+	width: 100%;
+}
+.rankingoutercontainer{
+	margin-top: 200px;
+}
+.pagination{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;	
+	background-color: white;
+	padding: 30px;
+}
