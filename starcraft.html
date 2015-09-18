@@ -15,24 +15,43 @@
 				<h1 class = "title">Starcraft Rankings</h1>
 			<div class = "sortby">
 			<div class = "menucontainer">
-				<div class = "menuitem container">	
+				<div class = "menuitem container" ng-click = "sortusername()">	
 				{{cols[0]}}
 				</div>	
-				<div class = "menuitem container">	
+				<div class = "menuitem container" ng-click = "sortfullname()">	
 				{{cols[1]}}
 				</div>	
-				<div class = "menuitem container">
+				<div class = "menuitem container" ng-click = "sortregion()">
 				{{cols[2]}}
 				</div>
-				<div class = "menuitem container">
+				<div class = "menuitem container" ng-click = "sortrace()">
 				{{cols[3]}}
 				</div>
-				<div class = "menuitem container">
+				<div class = "menuitem container" ng-click = "sortwins()">
 				{{cols[4]}}
 				</div>
 			</div>
 			</div>
+			<div class = "sortby">
+			<div class = "menucontainer">
+				<div class = "menuitem container">	
+				<input type="text" name="username" ng-change = "filterusername('username')" ng-model = "filterusernamemodel">
+				</div>	
+				<div class = "menuitem container">	
+				<input type="text" name="fullname" ng-change = "filterfullname()" ng-model = "filterfullnamemodel">
+				</div>	
+				<div class = "menuitem container">
+				<input type="text" name="fullname" ng-change = "filterregion()" ng-model = "filterregionmodel">
+				</div>
+				<div class = "menuitem container">
+				<input type="text" name="fullname" ng-change = "filterace()" ng-model = "filterracemodel">
+				</div>
+				<div class = "menuitem container">.
+				</div>
+			</div>
+			</div>
 		</div>
+
 
 	<div class = "rankingoutercontainer">
 	<div class = "rankingcontainer" ng-repeat = "x in displaydata track by $index">

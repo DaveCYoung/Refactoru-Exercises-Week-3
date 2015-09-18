@@ -828,7 +828,7 @@ angular.module('exModule').controller('mainController',['$scope', function($scop
 
     $scope.datapush()
 
-     $scope.oneclick = function(event){
+     $scope.oneclick = function(){
     $scope.displaydata=[]
     for (i=0;i<20;i++){
     $scope.displaydata.push($scope.data[i])
@@ -836,35 +836,35 @@ angular.module('exModule').controller('mainController',['$scope', function($scop
         }
     }
 
-    $scope.twoclick = function(event){
+    $scope.twoclick = function(){
    $scope.displaydata=[]
     for (i=19;i<40;i++){
     $scope.displaydata.push($scope.data[i])
     $scope.datacounter=i
         }
     }
-    $scope.threeclick = function(event){
+    $scope.threeclick = function(){
     $scope.displaydata=[]
     for (i=39;i<60;i++){
     $scope.displaydata.push($scope.data[i])
     $scope.datacounter=i
         }
     }
-    $scope.fourclick = function(event){
+    $scope.fourclick = function(){
     $scope.displaydata=[]
     for (i=59;i<80;i++){
     $scope.displaydata.push($scope.data[i])
     $scope.datacounter=i
         }
     }
-    $scope.fiveclick = function(event){
+    $scope.fiveclick = function(){
     $scope.displaydata=[]
     for (i=79;i<100;i++){
     $scope.displaydata.push($scope.data[i])
     $scope.datacounter=i
         }
     }
-    $scope.nextclick = function(event){
+    $scope.nextclick = function(){
     $scope.displaydata=[]
     $scope.counter = $scope.datacounter   
     for (i=$scope.counter;i<($scope.counter+21);i++){
@@ -872,16 +872,17 @@ angular.module('exModule').controller('mainController',['$scope', function($scop
     $scope.datacounter = i
         }
     }
-     $scope.lastclick = function(event){
+     $scope.lastclick = function(){
     $scope.displaydata=[]
     for (i=$scope.data.length;i>$scope.data.length-21;i--){
     $scope.displaydata.push($scope.data[i])
-    $scope.datacounter= $scope.length
+    $scope.datacounter= $scope.data.length-20;
         }
     }
-    $scope.prevclick = function(event){
+    $scope.prevclick = function(){
     $scope.displaydata=[]
     $scope.counter = $scope.datacounter   
+    console.log($scope.counter)
     for (i=$scope.counter;i>($scope.counter-21);i--){
     if(i>=0){
         $scope.displaydata.push($scope.data[i])
@@ -890,18 +891,135 @@ angular.module('exModule').controller('mainController',['$scope', function($scop
     }
 
 
+    $scope.sortusername = function(){
+        $scope.data.sort(function (a, b) {
+            if (a[0] > b[0]) {
+             return 1;
+            }
+            if (a[0] < b[0]) {
+              return -1;
+            }
+            return 0;
+    })
+    $scope.displaydata=[]
+    $scope.datapush()
+    }
+
+    $scope.sortfullname = function(){
+        $scope.data.sort(function (a, b) {
+            if (a[1] > b[1]) {
+             return 1;
+            }
+            if (a[1] < b[1]) {
+              return -1;
+            }
+            return 0;
+    })
+    $scope.displaydata=[]
+    $scope.datapush()
+    }
+    $scope.sortregion = function(){
+        $scope.data.sort(function (a, b) {
+            if (a[2] > b[2]) {
+             return 1;
+            }
+            if (a[2] < b[2]) {
+              return -1;
+            }
+            return 0;
+    })
+    $scope.displaydata=[]
+    $scope.datapush()
+    }
+    $scope.sortrace = function(){
+        $scope.data.sort(function (a, b) {
+            if (a[3] > b[3]) {
+             return 1;
+            }
+            if (a[3] < b[3]) {
+              return -1;
+            }
+            return 0;
+    })
+    $scope.displaydata=[]
+    $scope.datapush()
+    }
+    $scope.sortwins = function(){
+        $scope.data.sort(function (a, b) {
+            if (a[4] < b[4]) {
+             return 1;
+            }
+            if (a[4] > b[4]) {
+              return -1;
+            }
+            return 0;
+    })
+    $scope.displaydata=[]
+    $scope.datapush()
+    }
 
 
+// var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// => [2, 4, 6]
 
+$scope.filterusernamemodel = ''
+$scope.filterusername = function(){
+$scope.displaydata = _.filter($scope.data, function(x){
+    console.log($scope.filterusernamemodel)
+    y = x[0].toLowerCase()
+    z = $scope.filterusernamemodel.toLowerCase()
+    console.log(y)
+    for(i = 0; i<y.length; i++){
+       
+        return (y.slice(i, (i+(z.length))) === z)
+    }
 
+})
+}
 
+$scope.filterfullnamemodel = ''
+$scope.filterfullname = function(){
+$scope.displaydata = _.filter($scope.data, function(x){
+    console.log($scope.filterfullnamemodel)
+    y = x[1].toLowerCase()
+    z = $scope.filterfullnamemodel.toLowerCase()
+    console.log(y)
+    for(i = 0; i<y.length; i++){
+       
+        return (y.slice(i, (i+(z.length))) === z)
+    }
 
+})
+}
 
+$scope.filterregionmodel = ''
+$scope.filterregion = function(){
+$scope.displaydata = _.filter($scope.data, function(x){
+    console.log($scope.filterregionmodel)
+    y = x[2].toLowerCase()
+    z = $scope.filterregionmodel.toLowerCase()
+    console.log(y)
+    for(i = 0; i<y.length; i++){
+       
+        return (y.slice(i, (i+(z.length))) === z)
+    }
 
+})
+}
+$scope.filterracemodel = ''
+$scope.filterrace = function(){
+$scope.displaydata = _.filter($scope.data, function(x){
+    console.log($scope.filterracemodel)
+    y = x[3].toLowerCase()
+    z = $scope.filterracemodel.toLowerCase()
+    console.log(y)
+    for(i = 0; i<y.length; i++){
+       
+        return (y.slice(i, (i+(z.length))) === z)
+    }
 
-
-
-
+})
+}
 
 
 }])
